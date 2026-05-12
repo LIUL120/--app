@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-st.set_page_config(page_title="美多巴分流医院查询看板", layout="centered")
+st.set_page_config(page_title="美多芭分流医院查询看板", layout="centered")
 
 @st.cache_data
 def load_data():
@@ -30,8 +30,8 @@ def load_data():
 try:
     df = load_data()
     
-    st.title("🏥 美多巴分流医院查询看板")
-    st.markdown("当就诊医院没有美多巴时，查询周边可开药的替代机构。")
+    st.title("🏥 美多芭分流医院查询看板")
+    st.markdown("当就诊医院没有美多芭时，查询周边可开药的替代机构。")
 
     # 1. 城市筛选
     city_list = df['城市'].dropna().unique().tolist()
@@ -59,7 +59,7 @@ try:
                     use_container_width=True
                 )
             else:
-                st.warning("⚠️ 该机构周边暂无可开美多巴的分流机构。")
+                st.warning("⚠️ 该机构周边暂无可开美多芭的分流机构。")
 
 except Exception as e:
     st.error(f"❌ 运行遇到一点小问题：{e}")
